@@ -31,4 +31,25 @@ document.getElementById('totalCalculate').addEventListener('click', function () 
     const totalPlayerCostElement = document.getElementById('playerExpenses');
     totalPlayerCostElement.innerText = totalExpense;
 
+
+    const playerExpense = parseFloat(totalPlayerCostElement.innerText);
+    const finalTotalCost = document.getElementById('finalTotal');
+
+    const managerCost = document.getElementById('managerCost');
+    const managerCostValue = parseFloat(managerCost.value);
+
+    if (isNaN(managerCostValue) || managerCostValue < 0) {
+        alert('Please Provide A Valid Number');
+        return;
+    }
+    const coachCost = document.getElementById('coachCost');
+    const coachCostValue = parseFloat(coachCost.value);
+
+    if (isNaN(coachCostValue) || coachCostValue < 0) {
+        alert('Please Provide A Valid Number');
+        return;
+    }
+    const finalExpenses = playerExpense + managerCostValue + coachCostValue;
+    finalTotalCost.innerText = finalExpenses;
 });
+
